@@ -2,6 +2,7 @@ package com.aviral.parser;
 
 import com.aviral.model.Candidate;
 import com.aviral.model.Experience;
+import com.aviral.model.Provenance;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
@@ -28,12 +29,20 @@ public class CsvParser implements Parser {
                 CSVRecord record = csvParser.iterator().next();
 
                 candidate.setFullName(getValue(record, "name"));
+                addProvenance(candidate, "fullName", "CSV", "header:name");
+
                 candidate.setEmails(toList(getValue(record, "email")));
+                addProvenance(candidate, "emails", "CSV", "header:email");
+
                 candidate.setPhones(toList(getValue(record, "phone")));
+                addProvenance(candidate, "phones", "CSV", "header:phone");
 
                 Experience experience = new Experience();
                 experience.setCompany(getValue(record, "current_company"));
+                addProvenance(candidate, "experience.company", "CSV", "header:current_company");
+
                 experience.setTitle(getValue(record, "title"));
+                addProvenance(candidate, "experience.title", "CSV", "header:title");
                 candidate.getExperience().add(experience);
             }
         }
@@ -57,5 +66,13 @@ public class CsvParser implements Parser {
             values.add(value);
         }
         return values;
+    }
+
+    private void addProvenance(Candidate candidate, String field, String source, String method) {
+        Provenance provenance = new Provenance();
+        provenance.setField(field);
+        provenance.setSource(source);
+        provenance.setMethod(method);
+        candidate.getProvenance().add(provenance);
     }
 }

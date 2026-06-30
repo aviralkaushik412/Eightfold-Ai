@@ -1,0 +1,109 @@
+{
+  "candidateId" : null,
+  "fullName" : "Aviral Kaushik",
+  "emails" : [ "aviral@gmail.com", "aviralkaushik412@gmail.com" ],
+  "phones" : [ "9876543210", "+91 7457065837" ],
+  "location" : null,
+  "links" : null,
+  "headline" : null,
+  "yearsExperience" : null,
+  "skills" : [ {
+    "name" : "MySQL",
+    "confidence" : 0.9,
+    "sources" : [ "Resume" ]
+  }, {
+    "name" : "Git",
+    "confidence" : 0.9,
+    "sources" : [ "Resume" ]
+  }, {
+    "name" : "CSS",
+    "confidence" : 0.9,
+    "sources" : [ "Resume" ]
+  }, {
+    "name" : "Node.js",
+    "confidence" : 0.9,
+    "sources" : [ "Resume" ]
+  }, {
+    "name" : "Java",
+    "confidence" : 0.9,
+    "sources" : [ "Resume" ]
+  }, {
+    "name" : "Python",
+    "confidence" : 0.9,
+    "sources" : [ "Resume" ]
+  }, {
+    "name" : "REST API",
+    "confidence" : 0.9,
+    "sources" : [ "Resume" ]
+  }, {
+    "name" : "SQL",
+    "confidence" : 0.9,
+    "sources" : [ "Resume" ]
+  }, {
+    "name" : "C++",
+    "confidence" : 0.9,
+    "sources" : [ "Resume" ]
+  }, {
+    "name" : "Spring Boot",
+    "confidence" : 0.9,
+    "sources" : [ "Resume" ]
+  }, {
+    "name" : "MongoDB",
+    "confidence" : 0.9,
+    "sources" : [ "Resume" ]
+  }, {
+    "name" : "React",
+    "confidence" : 0.9,
+    "sources" : [ "Resume" ]
+  } ],
+  "experience" : [ {
+    "company" : "Google",
+    "title" : "SDE Intern",
+    "startDate" : null,
+    "endDate" : null,
+    "summary" : null
+  } ],
+  "education" : [ ],
+  "provenance" : [ {
+    "field" : "fullName",
+    "source" : "CSV",
+    "method" : "header:name"
+  }, {
+    "field" : "emails",
+    "source" : "CSV",
+    "method" : "header:email"
+  }, {
+    "field" : "phones",
+    "source" : "CSV",
+    "method" : "header:phone"
+  }, {
+    "field" : "experience.company",
+    "source" : "CSV",
+    "method" : "header:current_company"
+  }, {
+    "field" : "experience.title",
+    "source" : "CSV",
+    "method" : "header:title"
+  }, {
+    "field" : "fullName",
+    "source" : "Resume",
+    "method" : "pdfbox-first-non-empty-line"
+  }, {
+    "field" : "emails",
+    "source" : "Resume",
+    "method" : "regex-email"
+  }, {
+    "field" : "phones",
+    "source" : "Resume",
+    "method" : "regex-phone"
+  }, {
+    "field" : "skills",
+    "source" : "Resume",
+    "method" : "dictionary-skill-match"
+  }, {
+    "field" : "experience",
+    "source" : "Resume",
+    "method" : "heuristic-experience-section"
+  } ],
+  "overallConfidence" : 0.9
+}
