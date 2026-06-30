@@ -110,6 +110,12 @@ Example:
 mvn -q -DskipTests compile
 ```
 
+Put candidate.csv in samples/
+Put resume.pdf in samples/
+Configure config.json
+Run Main.java
+output/output.json is generated
+
 Then run the application entry point through your preferred Java launcher.
 
 ## Sample Input
